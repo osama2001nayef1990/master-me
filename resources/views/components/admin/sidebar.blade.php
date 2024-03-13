@@ -57,13 +57,22 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('home')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.my_links')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
@@ -80,36 +89,36 @@
                 </ul>
             </div>
         </li>
+{{--        <li class="nav-item menu-items">--}}
+{{--            <a class="nav-link" href="{{route('admin.my_links')}}">--}}
+{{--              <span class="menu-icon">--}}
+{{--                <i class="mdi mdi-playlist-play"></i>--}}
+{{--              </span>--}}
+{{--                <span class="menu-title">My Links</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-                <span class="menu-title">Form Elements</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="{{route('admin.create.category.view')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">Categories</span>
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{route('admin.users.all')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">All Users</span>
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/icons/mdi.html">
+            <a class="nav-link" href="{{route('admin.links.all')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">All Links</span>
             </a>
         </li>
         <li class="nav-item menu-items">

@@ -21,6 +21,6 @@ class panel.sidebar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.panel.sidebar');
+        return view('components.admin.sidebar');
     }
 }

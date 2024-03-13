@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+    @yield('style')
 </head>
 <body>
 <div class="container-scroller">
@@ -34,7 +35,12 @@
         <x-admin.topbar>
         </x-admin.topbar>
         <!-- partial -->
-        @yield('content')
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @yield('content')
+
+            </div>
+        </div>
 
         <!-- main-admin ends -->
     </div>
@@ -62,5 +68,6 @@
 <!-- Custom js for this page -->
 <script src="{{asset('assets/js/dashboard.js')}}"></script>
 <!-- End custom js for this page -->
+@yield('script')
 </body>
 </html>

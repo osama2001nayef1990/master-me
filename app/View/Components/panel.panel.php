@@ -21,6 +21,6 @@ class panel.panel extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.panel.panel');
+        return view('components.admin.admin');
     }
 }

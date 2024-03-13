@@ -14,46 +14,11 @@
             </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                    <h6 class="p-3 mb-0">Projects</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-file-outline text-primary"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">Software Development</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-web text-info"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">UI Development</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-layers text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">Software Testing</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
+            <li class="nav-item d-none d-lg-block">
+{{--                <a class="nav-link btn btn-success create-new-button" id="createbutton"  aria-expanded="false" href="{{route('admin.create.link.view')}}">+ Create Short Link</a>--}}
+                <form method="GET" action="{{route('admin.create.link.view')}}">
+                    <input type="submit" class="btn btn-success" value="+ Create Short Link">
+                </form>
             </li>
             <li class="nav-item nav-settings d-none d-lg-block">
                 <a class="nav-link" href="#">
@@ -170,16 +135,21 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-logout text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject mb-1">Log out</p>
-                        </div>
-                    </a>
+                        <form method="post" action="{{route('logout')}}">
+                            @csrf
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-dark rounded-circle">
+                                        <i class="mdi mdi-logout text-danger"></i>
+                                    </div>
+                                </div>
+                                <div>
+{{--                                    <p class="preview-subject mb-1">Log out</p>--}}
+                                    <input type="submit" class="dropdown-item preview-item " value="Logout">
+                                </div>
+
+                            </a>
+                        </form>
                     <div class="dropdown-divider"></div>
                     <p class="p-3 mb-0 text-center">Advanced settings</p>
                 </div>

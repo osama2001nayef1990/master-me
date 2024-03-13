@@ -25,14 +25,14 @@
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
-        <x-panel.sidebar>
+        <x-admin.sidebar>
 
-        </x-panel.sidebar>
+        </x-admin.sidebar>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
-          <x-panel.topbar>
-          </x-panel.topbar>
+          <x-admin.topbar>
+          </x-admin.topbar>
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
@@ -685,7 +685,7 @@
           </footer>
           <!-- partial -->
         </div>
-        <!-- main-panel ends -->
+        <!-- main-admin ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>

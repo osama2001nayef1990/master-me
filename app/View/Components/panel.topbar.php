@@ -21,6 +21,6 @@ class panel.topbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.panel.topbar');
+        return view('components.admin.topbar');
     }
 }

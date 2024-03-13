@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    protected $table='categories';
     public function link()
     {
         return $this->belongsTo(Link::class);
