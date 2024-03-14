@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -25,13 +27,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected function redirectTo()
-    {
-        // Redirect admin to admin page and user to user page
-
-            return route('home');
-
-    }
 
 
     /**
@@ -42,6 +37,30 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function redirectTo()
+    {
+        // Redirect admin to admin page and user to user page
+
+        return route('home');
+
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->is_active == 0) {
+            // Deactivate the authenticated user and log them out
+            $this->guard()->logout();
+
+            // Invalidate the session
+            $request->session()->invalidate();
+
+            // Redirect to the error page or login page with error message
+            return abort(404);
+        }
+
+        return redirect()->intended($this->redirectPath());
     }
 
 }

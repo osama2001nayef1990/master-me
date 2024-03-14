@@ -21,8 +21,10 @@
                                     <th>ID</th>
                                     <th>User Name</th>
                                     <th>User Email</th>
+                                    <th>Category</th>
                                     <th>Short Link</th>
 {{--                                    <th>Long Link</th>--}}
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                                 </thead>
@@ -32,8 +34,16 @@
                                         <td>{{$link->id}}</td>
                                         <td>{{$link->user->name}}</td>
                                         <td>{{$link->user->email}}</td>
+                                        <td>{{\App\Models\Category::all()->find($link->category_id)->name}}</td>
                                         <td>{{$link->short_url}}</td>
 {{--                                        <td>{{$link->long_url}}</td>--}}
+                                        <td>
+                                            <form method="POST" action="{{route('link.edit.view',$link)}}" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('post')
+                                                <input type="submit" class="btn btn-success" value="Edit">
+                                            </form>
+                                        </td>
                                         <td>
                                             <form method="POST" action="{{route('link.delete',$link)}}" enctype="multipart/form-data">
                                                 @csrf

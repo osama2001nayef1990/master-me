@@ -52,7 +52,11 @@ class User extends Authenticatable
     }
     public function domains()
     {
-        return $this->belongsToMany(Domain::class);
+        return $this->belongsToMany(Domain::class,'users_domains');
+    }
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
     }
 
 }

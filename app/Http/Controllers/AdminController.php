@@ -42,6 +42,10 @@ class AdminController extends Controller
     {
         return view('admin.all-links');
     }
+    public function newShortLink()
+    {
+        return view('admin.newShortLink');
+    }
     public function block(User $user)
     {
         $user->is_active = 0;

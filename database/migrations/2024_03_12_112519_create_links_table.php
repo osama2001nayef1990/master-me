@@ -18,7 +18,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreignId('qr_id')->nullable()->references('id')->on('qr_codes')->onDelete('cascade');
+            $table->foreignId('qr_id')->references('id')->on('qr_codes')->onDelete('cascade');
             $table->foreignId('domain_id')->references('id')->on('domains')->onDelete('cascade');
             $table->timestamps();
         });

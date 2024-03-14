@@ -20,6 +20,7 @@ class CategoryController extends Controller
         //Create category
         $category = new Category();
         $category->name = \request()->name;
+        $category->user_id = auth()->user()->id;
         $category->save();
 
         session()->flash('create');

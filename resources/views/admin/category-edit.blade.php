@@ -17,7 +17,7 @@
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" name="name" id="name" value="{{$category->name}}">
-                                @error('category')
+                                @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

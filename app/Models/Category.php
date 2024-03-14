@@ -13,5 +13,9 @@ class Category extends Model
     {
         return $this->belongsTo(Link::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

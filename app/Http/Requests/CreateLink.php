@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateLink extends FormRequest
 {
+
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -21,16 +23,24 @@ class CreateLink extends FormRequest
      */
     public function rules(): array
     {
+
+
         return [
-            'link'=>'required|url'
+            'link'=>'required|url',
+            'category'=>'required',
+            'domain'=>'required',
         ];
     }
 
     public function messages(): array
     {
+
+
         return [
             'link.required' => 'The link field is required.',
             'link.url' => 'The link must be a valid URL.',
+            'category.required' => 'The category field is required.',
+            'domain.required' => 'The domain field is required.',
         ];
     }
 

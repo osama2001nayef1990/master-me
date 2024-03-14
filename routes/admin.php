@@ -9,6 +9,7 @@ use App\Models\User;
 Route::middleware('auth')->group(function () {
 //    Route::get('/dashboard', [AdminController::class,'index'])->name('admin.dashboard');
     Route::get('/create/link', [AdminController::class, 'newLink'])->name('admin.create.link.view');
+    Route::get('/new/link', [AdminController::class, 'newShortLink'])->name('admin.create.link.show');
     Route::post('/create/link', [LinkController::class, 'create'])->name('admin.create.link');
     Route::get('/create/category', [AdminController::class, 'category'])->name('admin.create.category.view');
     Route::post('/create/category', [CategoryController::class, 'create'])->name('admin.create.category');
@@ -20,6 +21,10 @@ Route::middleware('auth')->group(function () {
     Route::put('/activate/user/{user}', [AdminController::class, 'activate'])->name('admin.user.activate');
     Route::get('/links/all', [AdminController::class, 'links'])->name('admin.links.all');
     Route::delete('/delete/links/{link}', [LinkController::class, 'destroy'])->name('link.delete');
+    Route::post('/edit/links/{link}', [LinkController::class, 'update'])->name('link.edit.view');
+    Route::put('/edit/links/{link}', [LinkController::class, 'edit'])->name('link.edit');
+    Route::put('/create/{link}/qr', [LinkController::class, 'createQr'])->name('qr.create');
+
 
 
     Route::get('mylinks',function (){

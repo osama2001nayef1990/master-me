@@ -16,7 +16,7 @@
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item d-none d-lg-block">
 {{--                <a class="nav-link btn btn-success create-new-button" id="createbutton"  aria-expanded="false" href="{{route('admin.create.link.view')}}">+ Create Short Link</a>--}}
-                <form method="GET" action="{{route('admin.create.link.view')}}">
+                <form method="GET" action="{{route('admin.create.link.show')}}">
                     <input type="submit" class="btn btn-success" value="+ Create Short Link">
                 </form>
             </li>
